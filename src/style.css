@@ -2,8 +2,20 @@
 body {
        background-color: black;
 }
+
 h2 {
 
     color: plum;
-    font-size: x-large;
+    font-size: large;
+    text-align: center;
+}
+
+h3 {
+    color: palevioletred;
+    font-size: 10px;
+    text-align: center;
+}
+
+.bootstrap-link {
+    text-align: center;
 }
