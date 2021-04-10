@@ -58,6 +58,7 @@ li {
     text-align: left;
     font-weight: 100;
     line-height: 19px;
+    text-transform: capitalize;
 }
 
 

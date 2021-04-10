@@ -10,6 +10,8 @@
         rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
         crossorigin="anonymous">
     <link rel="stylesheet" href="src/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
@@ -27,10 +29,10 @@
                         </div>
                 </form>
                 <div class="overview">
-                    <h1>New York, NY</h1>
+                    <h1 id="city">New York, NY</h1>
                     <ul>
-                        <li>Friday, April 9</li>
-                        <li>Showers</li>
+                        <li id="date">Friday, April 9</li>
+                        <li id="description">Showers</li>
                     </ul>
                 </div>
 
@@ -38,7 +40,7 @@
                     <div class="col-6">
                         <div class="weather-temperature">
                             <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" alt="showers" />
-                            <strong>54</strong>
+                            <strong id="temperature">54</strong>
                             <span class="units">°F |°C</span>
                         </div>
                     </div>
@@ -48,10 +50,10 @@
                                 Precipitation: 50%
                             </li>
                             <li>
-                                Humidity: 76%
+                                Humidity: <span id="humidity"></span>%
                             </li>
                             <li>
-                                Wind: 7 mph
+                                Wind: <span id="wind"> </span> mph
                             </li>
                         </ul>
                     </div>
