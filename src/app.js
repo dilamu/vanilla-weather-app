@@ -18,7 +18,7 @@ function showTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
 
-    dateElement.innerHTML = formatDate(response.data.sys.timezone * 1000);
+    dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
     humidityElement.innerHTML = response.data.main.humidity;
     descriptionElement.innerHTML = response.data.weather[0].description;
