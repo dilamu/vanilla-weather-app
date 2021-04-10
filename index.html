@@ -14,10 +14,157 @@
 
 <body>
     <div class="container">
-        <h2>Hello Dilamu</h2>
-        <h3>Vanilla Weather App</h3>
-        <button type="button" class="btn btn-success"> Button </button>
+        <div class="weather-app-wrapper">
+            <div class="weather-application">
+                <form id="search-form" class="mb-3">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="search" placeholder="Enter a city...." class="form-control" id="city-input"
+                                autocomplete="on" </div>
+                        </div>
+                        <div class="col-3 p-0">
+                            <input type="submit" class="btn btn-primary w-100" value="Search">
+                        </div>
+                </form>
+                <div class="overview">
+                    <h1>New York, NY</h1>
+                    <ul>
+                        <li>Friday, April 9</li>
+                        <li>Showers</li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="weather-temperature">
+                            <img src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png" alt="showers" />
+                            <strong>54</strong>
+                            <span class="units">°F |°C</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <ul>
+                            <li>
+                                Precipitation: 50%
+                            </li>
+                            <li>
+                                Humidity: 76%
+                            </li>
+                            <li>
+                                Wind: 7 mph
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="WeatherForecast row">
+                    <div class="col">
+                        <div class="Sun">
+                            Sunday
+                            <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy">
+
+                            <div>
+                                <span class="temperature-highest">63</span>° |
+                                <span class="temperature-lowest">56</span>°
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="Mon">
+                            Monday
+                            <div>
+                                <img src="https://ssl.gstatic.com/onebox/weather/48/rain.png" alt="Cloudy">
+                            </div>
+                            <div>
+                                <span class="temperature-highest">53</span>° |
+                                <span class="temperature-lowest">46</span>°
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col">
+                        <div class="Tues">
+                            Tuesday
+                            <div>
+                                <img src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png" alt="Cloudy">
+                            </div>
+                            <div>
+                                <span class="temperature-highest">57</span>° |
+                                <span class="temperature-lowest">49</span>°
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="Wed">
+                            Wednesday
+                            <div>
+                                <img src="https://ssl.gstatic.com/onebox/weather/48/rain_light.png" alt="Cloudy">
+                            </div>
+                            <div>
+                                <span class="temperature-highest">65</span>° |
+                                <span class="temperature-lowest">48</span>°
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="Thur">
+                            Thursday
+                            <div>
+                                <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy">
+                            </div>
+                            <div>
+                                <span class="temperature-highest">63</span>° |
+                                <span class="temperature-lowest">48</span>°
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="Friday">
+                            Friday
+                            <div>
+                                <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy">
+                            </div>
+                            <div>
+                                <span class="temperature-highest">61</span>° |
+                                <span class="temperature-lowest">47</span>°
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="Sat">
+                            Saturday
+                            <div>
+                                <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy">
+                            </div>
+                            <div>
+                                <span class="temperature-highest">63</span>° |
+                                <span class="temperature-lowest">17</span>°
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer class="info-source">
+            <a href="https://github.com/dilamu/vanilla-weather-app" target="_blank"> Open-source on GitHub</a> This
+            code
+            was coded by Diana L. M.
+        </footer>
     </div>
+
+
 </body>
 <script src="src/app.js"></script>
 
