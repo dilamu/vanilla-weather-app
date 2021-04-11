@@ -42,10 +42,21 @@ function showTemperature(response) {
     cityElement.innerHTML = response.data.name;
 }
 
+function search(city) {
 let apiKey = "b2347491570b2c40e3677712ca14813f";
-let city = "Mexico City";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Guadalajara&appid=${apiKey}&units=imperial`;
-
-console.log(apiUrl);
-
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+//console.log(apiUrl);
 axios.get(apiUrl).then(showTemperature);
+  
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+}
+
+search("New York");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
