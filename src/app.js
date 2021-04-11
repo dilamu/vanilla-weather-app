@@ -17,7 +17,23 @@ function showTemperature(response) {
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
+    let iconElement = document.querySelector("#icon");
+    let sundayIconElement = document.querySelector("#sunday-icon");
+    let mondayIconElement = document.querySelector("#monday-icon");
+    let tuesdayIconElement = document.querySelector("#tuesday-icon");
+    let wednesdayIconElement = document.querySelector("#wednesday-icon");
+    let thursdayIconElement = document.querySelector("#thursday-icon");
+    let fridayIconElement = document.querySelector("#friday-icon");
+    let saturdayIconElement = document.querySelector("#saturday-icon");
 
+    saturdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    fridayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    thursdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    wednesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    tuesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    mondayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    sundayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
     humidityElement.innerHTML = response.data.main.humidity;
@@ -27,7 +43,8 @@ function showTemperature(response) {
 }
 
 let apiKey = "b2347491570b2c40e3677712ca14813f";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${apiKey}&units=imperial`;
+let city = "Mexico City";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Guadalajara&appid=${apiKey}&units=imperial`;
 
 console.log(apiUrl);
 
