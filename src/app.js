@@ -9,46 +9,39 @@ function formatDate(timestamp) {
     console.log(timestamp);
 }
 
-function displayForecast() {
-
+function displayForecast(response) {
+    console.log(response.data.daily);
 let forecastElement = document.querySelector("#weather-forecast");
 
+
+let days = ["Thursday", "Friday", "Saturday", "Sunday"];
+
 let forecastHTML = `<div class="row">`;
-let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
 days.forEach(function(day) {
-    forecastHTML = forecastHTML + `<div class="row">
-                                <div class="col">
-                                    <div class="Sun">
-                                        <div class="forecast-date">${day}</div> 
-                                        <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy" id="sunday-icon">
-
-                                        <div>
+        forecastHTML = 
+        forecastHTML + 
+        `
+                        <div class="col-2">
+                            <div class="forecast-date">${day}</div> 
+                                    <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy" id="sunday-icon">
+                                        <div class="forecast-temperature">
                                             <span class="temperature-highest">63</span>° |
                                             <span class="temperature-lowest">56</span>°
                                         </div>
-                                    </div>
-                                </div>
-                            </div>`;
+                        </div>                               
+ `;
 });
-
-
-    forecastHTML = forecastHTML + `<div class="row">
-                                <div class="col">
-                                    <div class="Sun">
-                                        <div class="forecast-date">Wednesday</div> 
-                                        <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy" id="sunday-icon">
-
-                                        <div>
-                                            <span class="temperature-highest">63</span>° |
-                                            <span class="temperature-lowest">56</span>°
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>`;
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
 }
-
+function showForecast(coordinates) {
+    console.log(showForecast);  
+    let apiKey = "b2347491570b2c40e3677712ca14813f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+    axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemperature(response) {
     console.log(response.data);
@@ -76,6 +69,7 @@ celsiusTemperature = response.data.main.temp;
     //tuesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     //mondayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     //sundayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+   
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -83,6 +77,8 @@ celsiusTemperature = response.data.main.temp;
     descriptionElement.innerHTML = response.data.weather[0].description;
     temperatureElement.innerHTML = Math.round(celsiusTemperature);
     cityElement.innerHTML = response.data.name;
+
+    showForecast(response.data.coord);
 }
 
 function search(city) {
@@ -134,4 +130,3 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("New York"); 
-displayForecast();
