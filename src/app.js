@@ -9,6 +9,47 @@ function formatDate(timestamp) {
     console.log(timestamp);
 }
 
+function displayForecast() {
+
+let forecastElement = document.querySelector("#weather-forecast");
+
+let forecastHTML = `<div class="row">`;
+let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+days.forEach(function(day) {
+    forecastHTML = forecastHTML + `<div class="row">
+                                <div class="col">
+                                    <div class="Sun">
+                                        <div class="forecast-date">${day}</div> 
+                                        <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy" id="sunday-icon">
+
+                                        <div>
+                                            <span class="temperature-highest">63</span>° |
+                                            <span class="temperature-lowest">56</span>°
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+});
+
+
+    forecastHTML = forecastHTML + `<div class="row">
+                                <div class="col">
+                                    <div class="Sun">
+                                        <div class="forecast-date">Wednesday</div> 
+                                        <img src="https://ssl.gstatic.com/onebox/weather/48/partly_cloudy.png" alt="Cloudy" id="sunday-icon">
+
+                                        <div>
+                                            <span class="temperature-highest">63</span>° |
+                                            <span class="temperature-lowest">56</span>°
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>`;
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
+
 function showTemperature(response) {
     console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -18,23 +59,23 @@ function showTemperature(response) {
     let windElement = document.querySelector("#wind");
     let dateElement = document.querySelector("#date");
     let iconElement = document.querySelector("#icon");
-    let sundayIconElement = document.querySelector("#sunday-icon");
-    let mondayIconElement = document.querySelector("#monday-icon");
-    let tuesdayIconElement = document.querySelector("#tuesday-icon");
-    let wednesdayIconElement = document.querySelector("#wednesday-icon");
-    let thursdayIconElement = document.querySelector("#thursday-icon");
-    let fridayIconElement = document.querySelector("#friday-icon");
-    let saturdayIconElement = document.querySelector("#saturday-icon");
+    //let sundayIconElement = document.querySelector("#sunday-icon");
+    //let mondayIconElement = document.querySelector("#monday-icon");
+    //let tuesdayIconElement = document.querySelector("#tuesday-icon");
+    //let wednesdayIconElement = document.querySelector("#wednesday-icon");
+    //let thursdayIconElement = document.querySelector("#thursday-icon");
+    //let fridayIconElement = document.querySelector("#friday-icon");
+    //let saturdayIconElement = document.querySelector("#saturday-icon");
 
 celsiusTemperature = response.data.main.temp;
 
-    saturdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    fridayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    thursdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    wednesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    tuesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    mondayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    sundayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //saturdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //fridayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //thursdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //wednesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //tuesdayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //mondayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    //sundayIconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -92,4 +133,5 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 
-search("New York");
+search("New York"); 
+displayForecast();
