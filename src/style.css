@@ -1,47 +1,98 @@
 body {
-    font-family:Roboto,arial,sans-serif;
+    padding-top: 0%;
+    background-repeat: no-repeat;
+    background-size: 114%;
+    margin: auto;
+    background-position: center;
+    background-image:url(https://i0.wp.com/codemyui.com/wp-content/uploads/2016/05/css-cloud.gif?fit=880%2C440&ssl=1);
+}
+
+.container {
+    border: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    margin: 0px auto;
+    display: block;
+    bottom: 2px;
+    
 }
 
 .weather-application {
+    max-height: 1000;
     max-width:800px;
-    margin: 30px auto;
-    padding: 20px;
-    border: 2px solid #dadde1;
-    border-radius: 5px;
-    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    margin: 50px auto;
+    padding: 40px;
+    border: -10px solid #dadde1;
+    border-radius: 5px;  
+    background: -webkit-linear-gradient(top right, #011122, #0191F3);
+    background: -moz-linear-gradient(top right, #011122, #0191F3);
+    background: linear-gradient(to bottom left, #011122, #0191F3);
 }
 
 .form-control{
-    max-width: 65;
+    width: 440px;
+    background-color: rgb(253, 253, 253);
+    margin-right: 10%;
+    flex: 0 0 auto; 
+    display: block;
+}
+
+.btn-primary {
+    font-family:Arial, Helvetica, sans-serif;
+    padding-right: 10px;
+    margin: 10 auto;
+    width: 150px; 
+    box-sizing: border-box; 
+    position:relative; left:150px; top:0px;
+}
+
+.btn-primary-location {
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s; 
+    box-sizing: border-box;
+    border-color: gray;
 }
 
 h1 {
-    color: black;
-    font-size: 25px;
-    font-weight: 100;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 29px;
+    font-weight: 10;
     line-height: 28px;
+    bottom: 10%;
     margin-bottom: 0;
     padding-top: 10px;
 }
+
+.temperature-number {
+    font-size: 55px;
+    font-weight: lighter;
+}
+
 .info-source {
     max-width: 600px;
-    margin: 5px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px auto;
     font-size: 10px;
-    padding: 20px;
-  border: 1px solid #dadde1;
-  border-radius: 5px;
-    
-}
+    padding: 10px;
+    border: radial-gradient(circle at 10% 20%, rgb(149, 219, 254) 0%, rgb(7, 134, 197) 90.1%);
+    border-radius: 5px; 
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+}  
     
 .col {
  font-size: small;
  color:rgb(99, 97, 97);
-    }
+}
 
 .weather-temperature .units {
     font-size: 14px;
     position: relative;
-    top: -22px;
+    top: -29px;
     text-decoration: none;
 }
 
@@ -55,7 +106,7 @@ li {
     margin: 0;
     padding: 0;
     font-size: 15px;
-    color: rgb(135, 135, 135);
+    color: rgb(255, 255, 255);
     text-align: left;
     font-weight: 100;
     line-height: 19px;
@@ -70,7 +121,6 @@ li {
 
 .overview ul{
     margin-left: -32px;
-
 }
 
 li:first-letter {
@@ -78,52 +128,51 @@ li:first-letter {
 }
 
 .weather-temperature{
-    color: rgb(33, 33, 33);
+    color: rgb(233, 233, 233);
     font-size: 48px;
     font-weight: 200;
     line-height: 1;
     text-decoration: none;
 }
 
+
+
 .weather-temperature img{
  margin-right: 5px;
- height: 74px;
- width: 74px;
+ height: 135px;
+ width: 135px;
 }
 
 
-.WeatherForecast  {
-    text-align: center;
-    margin: 20px 0;
-    border-bottom: 1px solid #f9f7fe;
-    padding-bottom: 1px;
+
+.image-principal {
+    height: 104px;
+    width: 104px;
 }
 
-img {
-    height: 64px;
-    width: 64px;
-}
-
-.btn-primary {
-    padding-right: 10px;
-}
 
 .weather-temperature .active {
-    color: rgb(33, 33, 33);
+    color: rgb(214, 214, 214);
     cursor: default;
-    text-decoration: none;
-    
+    text-decoration: none;   
 }
+
 .weather-temperature .active:hover  {
     text-decoration: none;
-
 }
+
 .units{
-text-decoration: none;
+    text-decoration: none;
     cursor: pointer;
+}
+.units:hover{
+    text-decoration: none;
 }
 
 .active {
 text-decoration: none;
     cursor: pointer; 
+}
+.active:hover {
+     text-decoration: none;
 }

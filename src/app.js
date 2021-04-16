@@ -8,20 +8,41 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
     console.log(timestamp);
 }
+
+//function showWheatherCondition(response) {
+
+     //document.querySelector("#city").innerHTML =
+     //response.data.name;
+
+     //document.querySelector("#temperature").innerHTML =
+     //Math.round(response.data.main.temp);
+    //console.log(response.data.main.temp);
+//}
+
+//function searchForLocation(position) {
+    //let apiKey = "b2347491570b2c40e3677712ca14813f";
+    //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+    //console.log(apiUrl);
+
+    //axios.get(apiUrl).then(showWheatherCondition);
+//}
+
+//function myLocation(event) {
+    //event.preventDefault();
+    //navigator.geolocation.getCurrentPosition(searchForLocation);
+//}
+
 function layoutForecastDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
-    let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     return days[day];
 }
 
 function displayForecast(response) {
     let forecast = response.data.daily;
-
     let forecastElement = document.querySelector("#weather-forecast");
-
-
 
 let forecastHTML = `<div class="row">`;
 forecast.forEach(function(forecastDay, index) {
@@ -29,10 +50,9 @@ forecast.forEach(function(forecastDay, index) {
         forecastHTML = 
         forecastHTML + 
                         `
-                        <div class="col-2">
-                            <div class="forecast-date">${layoutForecastDay(forecastDay.dt)}</div> 
-                            
-                                    <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="Cloudy" id="sunday-icon">
+                        <div class="col-2" style="background-color: #ffff0g; border-bottom:5%; border-style: solid; border-width: thin; text-size: 15px; font-family: Roboto,arial,sans-serif; border-color: black; height: 150px;  text-align:center; color:white; ">
+                            <div class="forecast-date" style="font-family: Roboto,arial,sans-serif; display: inline-block; color:white; ">${layoutForecastDay(forecastDay.dt)}</div> 
+                                    <img style="text-align:center;" src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="Cloudy" id="sunday-icon">
                                         <div class="forecast-temperature">
                                             <span class="temperature-highest">${Math.round(forecastDay.temp.max)}</span>° |
                                             <span class="temperature-lowest">${Math.round(forecastDay.temp.min)}</span>°
@@ -48,7 +68,7 @@ forecast.forEach(function(forecastDay, index) {
 function showForecast(coordinates) {
     console.log(showForecast);  
     let apiKey = "b2347491570b2c40e3677712ca14813f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   console.log(apiUrl);
     axios.get(apiUrl).then(displayForecast);
 }
@@ -137,6 +157,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+//et currentLocationButton = document.querySelector("#current-location-button");
+//currentLocationButton.addEventListener("click", myLocation);
 
 
 search("New York"); 
